@@ -1,4 +1,8 @@
 <resources>
   <string name="app_name">Lesson</string>
   <string name="display_title">顯示訊息</string>
+  <string name="click_1">請按我1</string>
+  <string name="click_2">請按我2</string>
+  <string name="click_result">我被點到啦</string>
+  <string name="click_result2">我被長按了</string>
 </resources>
