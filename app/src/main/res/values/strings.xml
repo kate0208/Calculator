@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Lesson</string>
+  <string name="display_title">顯示訊息</string>
 </resources>
