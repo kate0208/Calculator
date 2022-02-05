@@ -4,15 +4,77 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity">
+  tools:context=".MainActivity"
+  android:padding="20dp">
+
   <TextView
-    android:id="@+id/helloWorld"
+    android:id="@+id/phoneTitle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!!!!!!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    android:text="電話號碼："
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/phoneNumber"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="1233435465"
+    app:layout_constraintStart_toEndOf="@id/phoneTitle"
+    app:layout_constraintTop_toTopOf="@id/phoneTitle" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/one"
+    android:text="1"
+    app:layout_constraintTop_toBottomOf="@id/phoneTitle"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/two" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/two"
+    android:text="2"
+    app:layout_constraintTop_toBottomOf="@id/phoneTitle"
+    app:layout_constraintStart_toEndOf="@+id/one"
+    app:layout_constraintEnd_toStartOf="@+id/three" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/three"
+    android:text="3"
+    app:layout_constraintStart_toEndOf="@+id/two"
+    app:layout_constraintTop_toBottomOf="@id/phoneTitle"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/four"
+    android:text="4"
+    app:layout_constraintTop_toBottomOf="@id/one"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/two" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/five"
+    android:text="5"
+    app:layout_constraintTop_toBottomOf="@id/two"
+    app:layout_constraintStart_toEndOf="@+id/one"
+    app:layout_constraintEnd_toStartOf="@+id/three" />
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/six"
+    android:text="6"
+    app:layout_constraintStart_toEndOf="@+id/two"
+    app:layout_constraintTop_toBottomOf="@id/three"
+    app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
