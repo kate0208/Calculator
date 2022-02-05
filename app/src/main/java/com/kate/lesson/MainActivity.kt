@@ -1,33 +1,30 @@
 package com.kate.lesson
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.kate.lesson.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-  private lateinit var editText: EditText
-  private lateinit var kmTextView: TextView
-  private lateinit var convertButton: Button
+  private lateinit var binding: ActivityMainBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    val view = binding.root
+    setContentView(view)
+
     setContentView(R.layout.activity_main)
 
-    editText = findViewById<EditText>(R.id.editText)
-    kmTextView = findViewById<TextView>(R.id.kmTextView)
-    convertButton = findViewById<Button>(R.id.convertButton)
 
-    convertButton.setOnClickListener {
-      val miles = editText.text.toString().toDoubleOrNull()
+
+    binding.convertButton.setOnClickListener {
+      val miles = binding.editText.text.toString().toDoubleOrNull()
 
       if (miles != null) {
         val km = (miles * 1.61).toString()
-        kmTextView.text = km
+        binding.kmTextView.text = km
       } else {
-        kmTextView.text = getString(R.string.plz)
+        binding.kmTextView.text = getString(R.string.plz)
       }
 
     }
