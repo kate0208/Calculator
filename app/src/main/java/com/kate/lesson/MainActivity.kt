@@ -13,10 +13,6 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
-    setContentView(R.layout.activity_main)
-
-
-
     binding.convertButton.setOnClickListener {
       val miles = binding.editText.text.toString().toDoubleOrNull()
 
