@@ -14,11 +14,18 @@ class MainActivity : AppCompatActivity() {
     setContentView(view)
 
     binding.convertButton.setOnClickListener {
-      val miles = binding.editText.text.toString().toDoubleOrNull()
+      val num = binding.editText.text.toString().toIntOrNull()
 
-      if (miles != null) {
-        val km = (miles * 1.61).toString()
-        binding.kmTextView.text = km
+      if (num != null) {
+
+        var sum = 0
+
+        for (i in 1..num) {
+          // sum = sum+i;
+          sum += i
+        }
+
+        binding.kmTextView.text = sum.toString()
       } else {
         binding.kmTextView.text = getString(R.string.plz)
       }
