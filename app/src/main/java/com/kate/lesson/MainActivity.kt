@@ -13,5 +13,16 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
+    /*binding取代findViewById
+    binding.ID.setOnClickListener{ }
+    */
+    binding.clear.setOnClickListener {
+      binding.account.setText("")
+      binding.passcode.setText("")
+    }
+    binding.enter.setOnClickListener {
+      println("account = ${binding.account.text}, passcode = ${binding.passcode.text}")
+    }
+
   }
 }
