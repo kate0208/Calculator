@@ -2,6 +2,7 @@ package com.kate.lesson
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.kate.lesson.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
-
+    binding.helloWorld.setOnClickListener {
+      Snackbar.make(binding.root, getString(R.string.snack_text), Snackbar.LENGTH_SHORT).show()
+    }
   }
 }
