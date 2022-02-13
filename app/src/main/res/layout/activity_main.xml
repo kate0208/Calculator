@@ -5,14 +5,36 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context=".MainActivity">
-  <TextView
-    android:id="@+id/helloWorld"
+  <Button
+    android:layout_marginTop="20dp"
+    android:id="@+id/pickGender"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!!!!!!"
+    android:text="@string/pick_gender"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"/>
+
+<!--  orientation方向-->
+  <RadioGroup
+    android:id="@+id/radioGroup"
+    android:orientation="horizontal"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RadioButton
+      android:text="宅男"
+      android:id="@+id/male"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <RadioButton
+      android:text="美女"
+      android:id="@+id/female"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+  </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
