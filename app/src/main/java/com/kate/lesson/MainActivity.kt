@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kate.lesson.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
   private lateinit var binding: ActivityMainBinding
+
+  private var number = 0
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -13,5 +16,11 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
+    binding.enter.setOnClickListener {
+      number += 1
+      binding.number.text = number.toString()
+    }
+
   }
+
 }
