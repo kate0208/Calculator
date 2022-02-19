@@ -13,5 +13,21 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
+    binding.plus.setOnClickListener {
+      var number = binding.number.text.toString().toIntOrNull()
+      if (number != null) {
+        number += 1
+        binding.number.setText(number.toString())
+      }
+    }
+
+    binding.minus.setOnClickListener {
+      var number = binding.number.text.toString().toIntOrNull()
+      if (number != null) {
+        number -= 1
+        binding.number.setText(number.toString())
+      }
+    }
+
   }
 }
