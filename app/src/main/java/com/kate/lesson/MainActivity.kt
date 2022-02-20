@@ -8,13 +8,14 @@ import kotlin.math.absoluteValue
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
   private var number = 1
+  private val list = listOf(R.drawable.dog1, R.drawable.dog2, R.drawable.dog3)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
-    binding.imageView.setImageResource(R.drawable.dog3)
+    binding.imageView.setImageResource(list[0])
 
     binding.plus.setOnClickListener {
       number += 1
@@ -29,10 +30,13 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun calculate() {
-    when (number.absoluteValue % 3) {
-      0 -> binding.imageView.setImageResource(R.drawable.dog2)
-      1 -> binding.imageView.setImageResource(R.drawable.dog3)
-      else -> binding.imageView.setImageResource(R.drawable.dog1)
-    }
+    val image = list[number.absoluteValue % list.size]
+    binding.imageView.setImageResource(image)
+
+//    when (number.absoluteValue % 3) {
+//      0 -> binding.imageView.setImageResource(R.drawable.dog2)
+//      1 -> binding.imageView.setImageResource(R.drawable.dog3)
+//      else -> binding.imageView.setImageResource(R.drawable.dog1)
+//    }
   }
 }
