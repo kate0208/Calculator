@@ -5,6 +5,9 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context=".MainActivity">
+
+
+
   <TextView
     android:id="@+id/helloWorld"
     android:layout_width="wrap_content"
@@ -14,5 +17,50 @@
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/dog"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/dogdog"
+    android:scaleType="fitXY"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/dog3"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/dog2"/>
+
+  <ImageView
+    android:id="@+id/dog2"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/dogdog"
+    android:scaleType="centerCrop"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/dog"
+    app:layout_constraintBottom_toTopOf="@id/dog4"/>
+
+  <ImageView
+    android:id="@+id/dog3"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/dogdog"
+    android:scaleType="fitCenter"
+    app:layout_constraintTop_toBottomOf="@id/dog"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/dog4"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <ImageView
+    android:id="@+id/dog4"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/dogdog"
+    android:scaleType="center"
+    app:layout_constraintTop_toBottomOf="@id/dog2"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@id/dog3"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
