@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
       binding.passcode.setText("")
     }
 
+    binding.accountIcon.setOnClickListener {
+      clickAccountIcon()
+    }
+
+    binding.passcodeIcon.setOnClickListener {
+      clickPasscodeIcon()
+    }
+
     binding.enter.setOnClickListener {
       saveData()
       checkLoginInfo()
@@ -29,6 +37,14 @@ class MainActivity : AppCompatActivity() {
 
     readData()
 
+  }
+
+  private fun clickPasscodeIcon() {
+    Toast.makeText(this, getString(R.string.click_icon_2), Toast.LENGTH_SHORT).show()
+  }
+
+  private fun clickAccountIcon() {
+    Toast.makeText(this, getString(R.string.click_icon), Toast.LENGTH_SHORT).show()
   }
 
   private fun checkLoginInfo() {
@@ -53,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     val settings = getSharedPreferences(DATA, 0)
     settings.edit()
       .putString(ACCOUNT, binding.account.text.toString())
-      .putString(PASSWORD,  binding.passcode.text.toString())
+      .putString(PASSWORD, binding.passcode.text.toString())
       .apply()
   }
 

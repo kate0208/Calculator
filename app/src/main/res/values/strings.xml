@@ -5,5 +5,7 @@
   <string name="clear">清除</string>
   <string name="enter">登入</string>
   <string name="login_success">成功</string>
+  <string name="click_icon">帳號</string>
+  <string name="click_icon_2">密碼</string>
 
 </resources>
