@@ -13,5 +13,7 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
+    binding.viewpager.adapter = MainAdapter(supportFragmentManager)
+    binding.tabLayout.setupWithViewPager(binding.viewpager)
   }
 }
