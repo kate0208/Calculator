@@ -3,7 +3,6 @@ package com.kate.lesson
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kate.lesson.databinding.ActivityMainBinding
 
@@ -17,84 +16,57 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
-    val adapter = FlowerAdapter()
-
+    val list = affirmationList(this)
+    val adapter = MainAdapter()
     binding.recyclerView.layoutManager = LinearLayoutManager(this)
-    binding.recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     binding.recyclerView.adapter = adapter
 
-    val list = flowerList(this)
     adapter.submitList(list)
+
   }
 
-  private fun flowerList(context: Context): List<Flower> {
+  private fun affirmationList(context: Context): List<Affirmation> {
     return listOf(
-      Flower(
-        id = 1,
-        name = context.getString(R.string.flower1_name),
-        image = R.drawable.rose,
-        description = context.getString(R.string.flower1_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation1),
+        imageResourceId = R.drawable.image1
       ),
-      Flower(
-        id = 2,
-        name = context.getString(R.string.flower2_name),
-        image = R.drawable.freesia,
-        description = context.getString(R.string.flower2_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation2),
+        imageResourceId = R.drawable.image2
       ),
-      Flower(
-        id = 3,
-        name = context.getString(R.string.flower3_name),
-        image = R.drawable.lily,
-        description = context.getString(R.string.flower3_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation3),
+        imageResourceId = R.drawable.image3
       ),
-      Flower(
-        id = 4,
-        name = context.getString(R.string.flower4_name),
-        image = R.drawable.sunflower,
-        description = context.getString(R.string.flower4_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation4),
+        imageResourceId = R.drawable.image4
       ),
-      Flower(
-        id = 5,
-        name = context.getString(R.string.flower5_name),
-        image = R.drawable.peony,
-        description = context.getString(R.string.flower5_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation5),
+        imageResourceId = R.drawable.image5
       ),
-      Flower(
-        id = 6,
-        name = context.getString(R.string.flower6_name),
-        image = R.drawable.daisy,
-        description = context.getString(R.string.flower6_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation6),
+        imageResourceId = R.drawable.image6
       ),
-      Flower(
-        id = 7,
-        name = context.getString(R.string.flower7_name),
-        image = R.drawable.lilac,
-        description = context.getString(R.string.flower7_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation7),
+        imageResourceId = R.drawable.image7
       ),
-      Flower(
-        id = 8,
-        name = context.getString(R.string.flower8_name),
-        image = R.drawable.marigold,
-        description = context.getString(R.string.flower8_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation8),
+        imageResourceId = R.drawable.image8
       ),
-      Flower(
-        id = 9,
-        name = context.getString(R.string.flower9_name),
-        image = R.drawable.poppy,
-        description = context.getString(R.string.flower9_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation9),
+        imageResourceId = R.drawable.image9
       ),
-      Flower(
-        id = 10,
-        name = context.getString(R.string.flower10_name),
-        image = R.drawable.daffodil,
-        description = context.getString(R.string.flower10_description)
+      Affirmation(
+        title = context.getString(R.string.affirmation10),
+        imageResourceId = R.drawable.image10
       ),
-      Flower(
-        id = 11,
-        name = context.getString(R.string.flower11_name),
-        image = R.drawable.dahlia,
-        description = context.getString(R.string.flower11_description)
-      )
     )
   }
 }
