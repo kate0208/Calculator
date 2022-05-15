@@ -22,6 +22,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.kate.lesson.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -106,10 +107,6 @@ class GameFragment : Fragment() {
     // Shuffles the questions and sets the question index to the first question.
     randomizeQuestions()
 
-    // Bind this fragment class to the layout
-    // TODO
-
-
     // Set the onClickListener for the submitButton
     binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
     { view: View ->
@@ -132,9 +129,12 @@ class GameFragment : Fragment() {
             setQuestion()
           } else {
             // We've won!  Navigate to the gameWonFragment.
+            view.findNavController()
+              .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
           }
         } else {
           // Game over! A wrong answer sends us to the gameOverFragment.
+          view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
         }
       }
     }
@@ -158,5 +158,12 @@ class GameFragment : Fragment() {
     answers.shuffle()
     (activity as AppCompatActivity).supportActionBar?.title =
       getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
+
+    // Bind this fragment class to the layout
+    binding.questionText.text = currentQuestion.text
+    binding.firstAnswerRadioButton.text = answers[0]
+    binding.secondAnswerRadioButton.text = answers[1]
+    binding.thirdAnswerRadioButton.text = answers[2]
+    binding.fourthAnswerRadioButton.text = answers[3]
   }
 }

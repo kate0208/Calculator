@@ -21,6 +21,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.kate.lesson.databinding.FragmentGameOverBinding
 
 class GameOverFragment : Fragment() {
@@ -39,6 +40,13 @@ class GameOverFragment : Fragment() {
     _binding = FragmentGameOverBinding.inflate(inflater, container, false)
     val view = binding.root
     return view
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    binding.tryAgainButton.setOnClickListener { view: View ->
+      view.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
+    }
   }
 
   override fun onDestroyView() {

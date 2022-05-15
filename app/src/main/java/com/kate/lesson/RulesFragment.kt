@@ -35,14 +35,14 @@ class RulesFragment : Fragment() {
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View {
+  ): View? {
     _binding = FragmentRulesBinding.inflate(inflater, container, false)
-    return binding.root
+    val view = binding.root
+    return view
   }
 
   override fun onDestroyView() {
     super.onDestroyView()
     _binding = null
   }
-
 }

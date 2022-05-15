@@ -2,6 +2,8 @@ package com.kate.lesson
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.kate.lesson.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,5 +15,14 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
+    val navController = this.findNavController(R.id.myNavHostFragment)
+    NavigationUI.setupActionBarWithNavController(this, navController)
+
+  }
+
+  override fun onSupportNavigateUp(): Boolean {
+    val navController = this.findNavController(R.id.myNavHostFragment)
+    return navController.navigateUp()
   }
 }
+
