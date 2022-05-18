@@ -7,9 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.kate.lesson.databinding.HolderBinding
 
-/**
- * Created by Rex on 2022/5/7.
- */
 class MainAdapter : ListAdapter<Affirmation, MainViewHolder>(MainDiffUtil()) {
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
     val itemBinding = HolderBinding.inflate(
