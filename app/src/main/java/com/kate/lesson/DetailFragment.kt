@@ -27,6 +27,18 @@ class DetailFragment : Fragment() {
     return view
   }
 
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    val args = DetailFragmentArgs.fromBundle(requireArguments())
+
+    val data: Affirmation = args.affirmation
+
+    binding.textView.text = data.title
+    binding.imageView.setImageResource(data.imageResourceId)
+
+  }
+
   override fun onDestroyView() {
     super.onDestroyView()
     _binding = null

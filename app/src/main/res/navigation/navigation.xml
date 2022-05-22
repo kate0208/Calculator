@@ -6,14 +6,18 @@
 
   <fragment
     android:id="@+id/affirmationFragment"
-    android:name="com.kate.lesson.AffirmationFragment"
-    android:label="ViewFragment">
+    android:label="ViewFragment"
+    android:name="com.kate.lesson.AffirmationFragment">
     <action
       android:id="@+id/action_affirmationFragment_to_detailFragment"
       app:destination="@id/detailFragment" />
   </fragment>
   <fragment
     android:id="@+id/detailFragment"
-    android:name="com.kate.lesson.DetailFragment"
-    android:label="DetailFragment" />
+    android:label="DetailFragment"
+    android:name="com.kate.lesson.DetailFragment">
+    <argument
+      android:name="affirmation"
+      app:argType="com.kate.lesson.Affirmation" />
+  </fragment>
 </navigation>

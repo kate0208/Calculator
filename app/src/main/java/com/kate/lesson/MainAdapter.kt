@@ -2,6 +2,7 @@ package com.kate.lesson
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -28,8 +29,15 @@ class MainAdapter : ListAdapter<Affirmation, MainViewHolder>(MainDiffUtil()) {
 class MainViewHolder(private val binding: HolderBinding) : RecyclerView.ViewHolder(binding.root) {
 
   fun bind(affirmation: Affirmation) {
+
     binding.textView.text = affirmation.title
     binding.imageView.setImageResource(affirmation.imageResourceId)
+
+    binding.root.setOnClickListener {
+      it.findNavController().navigate(
+        AffirmationFragmentDirections.actionAffirmationFragmentToDetailFragment(affirmation)
+      )
+    }
   }
 
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kate.lesson.databinding.FragmentAffirmationBinding
 
@@ -45,9 +44,6 @@ class AffirmationFragment : Fragment() {
 
     adapter.submitList(list)
 
-    binding.nextButton.setOnClickListener {
-      view.findNavController().navigate(AffirmationFragmentDirections.actionAffirmationFragmentToDetailFragment())
-    }
   }
 
 
