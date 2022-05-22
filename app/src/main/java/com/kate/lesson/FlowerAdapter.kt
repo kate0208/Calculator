@@ -2,6 +2,7 @@ package com.kate.lesson
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,12 @@ class FlowerViewHolder(private val binding: HolderMainBinding) : RecyclerView.Vi
     binding.flowerImage.setImageResource(flower.image)
     binding.flowerText.text = flower.name
     binding.flowerDescription.text = flower.description
+
+    binding.root.setOnClickListener {
+      it.findNavController().navigate(
+        FlowerListFragmentDirections.actionFlowerFragmentToDetailFragment(flower)
+      )
+    }
   }
 }
 
