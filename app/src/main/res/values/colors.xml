@@ -3,6 +3,7 @@
   <color name="primaryColor">#ffd180</color>
   <color name="primaryLightColor">#ffffb1</color>
   <color name="primaryDarkColor">#caa052</color>
+  <color name="accentColor">#D81B60</color>
   <color name="secondaryColor">#ffe0b2</color>
   <color name="secondaryLightColor">#ffffe4</color>
   <color name="secondaryDarkColor">#cbae82</color>
@@ -10,5 +11,10 @@
   <color name="secondaryTextColor">#000000</color>
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
+  <color name="selected_red_color">#ba000d</color>
+  <color name="black_text_color">#de000000</color>
+  <color name="grey_text_color">#99000000</color>
+  <color name="grey_button_color">#606060</color>
+  <color name="white_text_color">#ffffff</color>
 </resources>
 
