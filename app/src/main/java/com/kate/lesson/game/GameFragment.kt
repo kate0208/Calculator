@@ -32,7 +32,6 @@ class GameFragment : Fragment() {
 
   private val viewModel by viewModels<GameViewModel>()
 
-
   private var _binding: GameFragmentBinding? = null
 
   // This property is only valid between onCreateView and
@@ -52,19 +51,21 @@ class GameFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-
     binding.correctButton.setOnClickListener {
       viewModel.onCorrect()
-      updateScoreText()
-      updateWordText()
     }
+
     binding.skipButton.setOnClickListener {
       viewModel.onSkip()
-      updateScoreText()
-      updateWordText()
     }
-    updateScoreText()
-    updateWordText()
+
+    viewModel.score.observe(viewLifecycleOwner) { newScore ->
+      binding.scoreText.text = newScore.toString()
+    }
+
+    viewModel.word.observe(viewLifecycleOwner) { newWord ->
+      binding.wordText.text = newWord
+    }
   }
 
   override fun onDestroyView() {
@@ -76,18 +77,11 @@ class GameFragment : Fragment() {
    * Called when the game is finished
    */
   private fun gameFinished() {
-    val action = GameFragmentDirections.actionGameToScore(viewModel.score)
+    val action = GameFragmentDirections.actionGameToScore(viewModel.score.value ?: 0)
     findNavController(this).navigate(action)
   }
 
   /** Methods for updating the UI **/
 
-  private fun updateWordText() {
-    binding.wordText.text = viewModel.word
 
-  }
-
-  private fun updateScoreText() {
-    binding.scoreText.text = viewModel.score.toString()
-  }
 }
