@@ -5,5 +5,12 @@
   <string name="clear">清除</string>
   <string name="enter">登入</string>
   <string name="login_success">成功</string>
-
+  <string name="show_all">Show all</string>
+  <string name="show_rent">Rent</string>
+  <string name="show_buy">Buy</string>
+  <string name="type_rent">Rent</string>
+  <string name="type_sale">Sale</string>
+  <string name="display_type">For %s</string>
+  <string name="display_price_monthly_rental">$%,.0f/month</string>
+  <string name="display_price">$%,.0f</string>
 </resources>
