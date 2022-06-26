@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     binding.button2.setOnLongClickListener {
       setTitleText(getString(R.string.click_result2))
       return@setOnLongClickListener true
+      // 因為在lambda裡面 所以要指名道姓 return哪個東西
     }
 
   }
