@@ -19,6 +19,10 @@ package com.kate.lesson.overview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.kate.lesson.network.MarsApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * The [ViewModel] that is attached to the [OverviewFragment].
@@ -38,6 +42,17 @@ class OverviewViewModel : ViewModel() {
    * Sets the value of the status LiveData to the Mars API status.
    */
   private fun getMarsRealEstateProperties() {
-    response.value = "Set the Mars API Response here!"
+
+    MarsApi.retrofitService.getProperties().enqueue(object : Callback<String> {
+
+      override fun onFailure(call: Call<String>, t: Throwable) {
+        println(">>>>> onFailure ${t}")
+      }
+
+      override fun onResponse(call: Call<String>, response: Response<String>) {
+        this@OverviewViewModel.response.value = response.body()
+      }
+    })
+
   }
 }
