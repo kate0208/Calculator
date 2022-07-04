@@ -12,6 +12,33 @@ class MainActivity : AppCompatActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
+    readSwitchData()
+
+    binding.copy.setOnClickListener {
+      binding.textView.text = binding.editText.text.toString()
+      saveSwitchData()
+    }
+
+  }
+
+  private fun readSwitchData() {
+    val settings = getSharedPreferences(DATA, 0)
+    val text = settings.getString(TEXT, "")
+    binding.textView.text = text
+    // binding.editText.setText(text)  如果是存editText 要用setText(text)!!
+  }
+
+  private fun saveSwitchData() {
+    val settings = getSharedPreferences(DATA, 0)
+    settings.edit()
+      .putString(TEXT, binding.textView.text.toString())
+      .apply()
+  }
+
+  companion object {
+    private const val DATA = "DATA"
+    private const val TEXT = "TEXT"
 
   }
 }
+
