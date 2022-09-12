@@ -5,5 +5,9 @@
   <string name="clear">清除</string>
   <string name="enter">登入</string>
   <string name="login_success">成功</string>
+  <string name="today">TODAY</string>
+  <string name="yesterday">YESTERDAY</string>
+  <string name="weekly">WEEKLY</string>
+  <string name="monthly">MONTHLY</string>
 
 </resources>

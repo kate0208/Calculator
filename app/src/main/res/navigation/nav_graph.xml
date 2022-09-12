@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/todayFragment">
+  <fragment
+    android:id="@+id/todayFragment"
+    android:name="com.kate.lesson.TodayFragment"
+    android:label="TodayFragment" />
+  <fragment
+    android:id="@+id/weeklyFragment"
+    android:name="com.kate.lesson.WeeklyFragment"
+    android:label="WeeklyFragment" />
+  <fragment
+    android:id="@+id/yesterdayFragment"
+    android:name="com.kate.lesson.YesterdayFragment"
+    android:label="YesterdayFragment" />
+  <fragment
+    android:id="@+id/monthlyFragment"
+    android:name="com.kate.lesson.MonthlyFragment"
+    android:label="MonthlyFragment" />
+</navigation>
