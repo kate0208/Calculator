@@ -1,23 +1,20 @@
 package com.kate.lesson.model
 
-import com.squareup.moshi.FromJson
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-import com.squareup.moshi.ToJson
 
 /**
  * Created by Kate on 2022/9/12.
  */
 data class Response(
   @Json(name = "Message") val message: String,
-  @Json(name = "Status") val status:String,
-  val data:List<Rank>
+  @Json(name = "Status") val status: String,
+  val data: List<Rank>
 )
 
 data class Rank(
-  val isLiveMaster:Boolean,
-  val isOnAir:Boolean,
-  val isTrackable:Boolean,
+  val isLiveMaster: Boolean,
+  val isOnAir: Boolean,
+  val isTrackable: Boolean,
   val points: Int,
   val ranking: Int,
   val user: User

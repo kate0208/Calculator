@@ -4,21 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kate.lesson.databinding.FragmentTodayBinding
 import com.kate.lesson.model.RankTime
-import com.kate.lesson.network.RankApi
-import kotlinx.coroutines.launch
 
 /**
  * Created by Kate on 2022/9/12.
  */
 class TodayFragment : Fragment() {
+  private val viewModel: RankViewModel by viewModels()
+
   private var _binding: FragmentTodayBinding? = null
 
   private val binding get() = _binding!!
-
+  private val adapter = RankAdapter()
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
@@ -31,17 +34,14 @@ class TodayFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    binding.recycler.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
+    binding.recycler.layoutManager = LinearLayoutManager(context)
+    binding.recycler.adapter = adapter
 
-    lifecycleScope.launch {
-      try {
-        val rank = RankApi.retrofitService.getRank(RankTime.TODAY.name.lowercase())
-        println(">>>>>>> rank = ${rank.message}")
-        println(">>>>>>> rank = ${rank.data}")
-      } catch (e: Exception) {
-        e.printStackTrace()
-      }
+    viewModel.ranks.observe(viewLifecycleOwner) {
+      adapter.submitList(it)
     }
-
+    viewModel.getRank(RankTime.TODAY)
   }
 
   override fun onDestroyView() {
