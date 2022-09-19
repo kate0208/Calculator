@@ -6,17 +6,41 @@
   <fragment
     android:id="@+id/todayFragment"
     android:name="com.kate.lesson.TodayFragment"
-    android:label="TodayFragment" />
+    android:label="TodayFragment">
+    <action
+      android:id="@+id/action_todayFragment_to_profileFragment"
+      app:destination="@id/profileFragment" />
+  </fragment>
   <fragment
     android:id="@+id/weeklyFragment"
     android:name="com.kate.lesson.WeeklyFragment"
-    android:label="WeeklyFragment" />
+    android:label="WeeklyFragment">
+    <action
+      android:id="@+id/action_weeklyFragment_to_profileFragment"
+      app:destination="@id/profileFragment" />
+  </fragment>
   <fragment
     android:id="@+id/yesterdayFragment"
     android:name="com.kate.lesson.YesterdayFragment"
-    android:label="YesterdayFragment" />
+    android:label="YesterdayFragment">
+    <action
+      android:id="@+id/action_yesterdayFragment_to_profileFragment"
+      app:destination="@id/profileFragment" />
+  </fragment>
   <fragment
     android:id="@+id/monthlyFragment"
     android:name="com.kate.lesson.MonthlyFragment"
-    android:label="MonthlyFragment" />
+    android:label="MonthlyFragment">
+    <action
+      android:id="@+id/action_monthlyFragment_to_profileFragment"
+      app:destination="@id/profileFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/profileFragment"
+    android:name="com.kate.lesson.ProfileFragment"
+    android:label="ProfileFragment">
+    <argument
+      android:name="rank"
+      app:argType="com.kate.lesson.model.Rank" />
+  </fragment>
 </navigation>

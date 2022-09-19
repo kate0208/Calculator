@@ -1,6 +1,8 @@
 package com.kate.lesson.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.parcelize.Parcelize
 
 /**
  * Created by Kate on 2022/9/12.
@@ -11,6 +13,7 @@ data class Response(
   val data: List<Rank>
 )
 
+@Parcelize
 data class Rank(
   val isLiveMaster: Boolean,
   val isOnAir: Boolean,
@@ -18,8 +21,9 @@ data class Rank(
   val points: Int,
   val ranking: Int,
   val user: User
-)
+) : Parcelable
 
+@Parcelize
 data class User(
   val frameUrl: String,
   val id: String,
@@ -27,7 +31,7 @@ data class User(
   val levelNum: Int,
   val nickname: String,
   val profilePicture: String
-)
+) : Parcelable
 
 enum class RankTime {
   TODAY,
