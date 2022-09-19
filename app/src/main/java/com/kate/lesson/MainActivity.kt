@@ -1,8 +1,6 @@
 package com.kate.lesson
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import com.kate.lesson.databinding.ActivityMainBinding
 
@@ -18,26 +16,20 @@ class MainActivity : AppCompatActivity() {
     setContentView(view)
 
 
-    binding.number.addTextChangedListener(object : TextWatcher {
-      override fun afterTextChanged(s: Editable?) {
-      }
-
-      override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-      }
-
-      override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        number = s.toString().toIntOrNull() ?: 0
-      }
-    })
-
     binding.plus.setOnClickListener {
-      number += 1
-      binding.number.setText(number.toString())
+      val currentNumber = binding.number.text.toString().toIntOrNull()
+      if (currentNumber != null) {
+        number = currentNumber + 1
+        binding.number.setText(number.toString())
+      }
     }
 
     binding.minus.setOnClickListener {
-      number -= 1
-      binding.number.setText(number.toString())
+      val currentNumber = binding.number.text.toString().toIntOrNull()
+      if (currentNumber != null) {
+        number = currentNumber - 1
+        binding.number.setText(number.toString())
+      }
     }
 
   }
