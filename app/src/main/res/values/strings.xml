@@ -5,5 +5,15 @@
   <string name="clear">清除</string>
   <string name="enter">登入</string>
   <string name="login_success">成功</string>
+  <string name="title">體位檢測機</string>
+  <string name="tall">身高：</string>
+  <string name="weight">體重：</string>
+  <string name="calculate">計算</string>
+  <string name="standard_weight">標準體重\n無</string>
+  <string name="body_fat">體脂肪\n無</string>
+  <string name="age">年齡：</string>
+  <string name="bmi">BMI\n無</string>
+  <string name="boy">男生</string>
+  <string name="girl">女生</string>
 
 </resources>
