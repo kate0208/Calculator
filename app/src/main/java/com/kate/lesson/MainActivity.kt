@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
-    binding.helloWorld.setOnClickListener {
+    binding.snackBar.setOnClickListener {
       Snackbar.make(binding.root, getString(R.string.snack_text), Snackbar.LENGTH_SHORT).show()
     }
   }
