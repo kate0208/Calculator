@@ -7,17 +7,17 @@
   tools:context=".MainActivity">
 
   <ImageView
-    android:background="#ff9900"
+    android:background="#dd8833"
     android:id="@+id/imageView"
-    android:layout_width="240dp"
-    android:layout_height="450dp"
+    android:layout_width="320dp"
+    android:layout_height="510dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <Button
-    android:text="@string/plus"
+    android:text="@string/last"
     android:layout_marginTop="20dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
     app:layout_constraintStart_toStartOf="parent" />
 
   <Button
-    android:text="@string/minus"
+    android:text="@string/next"
     android:layout_marginTop="20dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

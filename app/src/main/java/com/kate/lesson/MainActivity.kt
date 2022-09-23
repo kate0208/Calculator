@@ -7,8 +7,8 @@ import kotlin.math.absoluteValue
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
-  private var number = 1
-  private val list = listOf(R.drawable.dog1, R.drawable.dog2, R.drawable.dog3)
+  private var number = 0
+  private val list = listOf(R.drawable.dog1, R.drawable.dog2, R.drawable.dog3, R.drawable.dog4, R.drawable.dog5)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
