@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import coil.load
-import coil.transform.CircleCropTransformation
+import com.bumptech.glide.Glide
 import com.kate.lesson.databinding.FragmentProfileBinding
 
 /**
@@ -35,9 +34,11 @@ class ProfileFragment : Fragment() {
     val rank = fragmentArgs.rank
 
 
-    binding.profilePhoto.load(rank.user.profilePicture) {
-      transformations(CircleCropTransformation())
-    }
+    Glide.with(binding.profilePhoto)
+      .load(rank.user.profilePicture)
+      .circleCrop()
+      .into(binding.profilePhoto)
+
     binding.nameTextView.text = rank.user.nickname
     binding.rankNumber.text = rank.ranking.toString()
     binding.pointNumber.text = rank.points.toString()

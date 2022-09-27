@@ -6,8 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.CircleCropTransformation
+import com.bumptech.glide.Glide
 import com.kate.lesson.databinding.HolderRankBinding
 import com.kate.lesson.model.Rank
 
@@ -40,9 +39,10 @@ class RankViewHolder(
     binding.root.setOnClickListener {
       onItemClickListener(rank)
     }
-    binding.photo.load(rank.user.profilePicture) {
-      transformations(CircleCropTransformation())
-    }
+    Glide.with(binding.photo)
+      .load(rank.user.profilePicture)
+      .circleCrop()
+      .into(binding.photo)
     binding.nameTextView.text = rank.user.nickname
     binding.number.text = rank.ranking.toString()
 
