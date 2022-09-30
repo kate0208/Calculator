@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginTop="16dp"
+  android:layout_marginStart="16dp"
+  android:layout_marginEnd="16dp">
+
+
+  <ImageView
+    android:id="@+id/earthquake_image"
+    android:layout_width="220dp"
+    android:layout_height="300dp"
+    android:scaleType="fitCenter"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:src="@tools:sample/avatars" />
+
+  <TextView
+    android:id="@+id/earthquake_number"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/earthquake_image"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="111146" />
+
+  <TextView
+    android:id="@+id/earthquake_report_content"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/earthquake_image"
+    app:layout_constraintTop_toBottomOf="@id/earthquake_number"
+    tools:text="09/27-19:11臺東縣東河鄉發生規模4.2有感地震，最大震度臺東縣東河4級。" />
+
+  <TextView
+    android:id="@+id/type"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:textSize="18sp"
+    app:layout_constraintStart_toStartOf="@id/earthquake_report_content"
+    app:layout_constraintTop_toBottomOf="@id/earthquake_report_content"
+    tools:text="芮氏規模" />
+
+  <TextView
+    android:id="@+id/value"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/type"
+    app:layout_constraintTop_toBottomOf="@id/earthquake_report_content"
+    tools:text=": 4.2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,5 +27,5 @@ data class EarthquakeInfo(
 
 data class Magnitude(
   val magnitudeType: String,
-  val magnitudeValue: Int
+  val magnitudeValue: Float
 )
