@@ -72,6 +72,7 @@ https://user-images.githubusercontent.com/95355956/194521887-3fe9189c-cc6c-48b6-
 https://github.com/kate0208/Lesson/tree/lesson_4_viewpager
 
 * ViewPager
+* TabLayout
 
 https://user-images.githubusercontent.com/95355956/194587222-dd6297f2-a880-4677-b989-bc0c72e7d625.mp4
 
